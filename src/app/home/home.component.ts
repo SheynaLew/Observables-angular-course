@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
+    //Observables
     const customCountingObservable = new Observable<number>((observer) => {
       let count = 0;
       setInterval(() => {
@@ -39,11 +40,11 @@ export class HomeComponent implements OnInit {
     );
 
 
-
     // this.countingObservableSubscription = interval(1000).subscribe(count => {
     //   console.log(count)
     // })
 
+    //Subscriptions
     this.customCountingObservableSubscription = operators.subscribe(data => {
       console.log(data);
     }, error => {
